@@ -34,6 +34,24 @@ class CreditCardPayment extends PaymentSystem {
         return "Credit Card";
     }
 
+    @Override
+    public String funcPrintInfo() 
+    {
+        return "===TRANSACTION MADE===" +
+                "\nTransaction Process: " + funcIsProcessPayment(strCardNumber, strCVV) +
+                "\nTransaction Mode: " + funcGetPaymentType() +
+                "\nTransaction ID: " + this.strTransactionID +
+                "\nAmount: " + this.dblAmount;
+    }
+
+    @Override
+    public double funcTransaction(double dblTransactAmount)
+    {
+        /*
+            Existing line of code. 
+        */
+        return dblTransactAmount;
+    }
 
 
 
