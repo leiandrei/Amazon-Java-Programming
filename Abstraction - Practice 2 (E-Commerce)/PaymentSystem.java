@@ -16,7 +16,7 @@ abstract class PaymentSystem {
     */
 
     public abstract boolean funcIsProcessPayment(String inputAccountNum, String inputCredential);
-    public abstract double funcTransaction(double dblTransactAmount);
+    public abstract double funcTransaction(double dblTransactAmount, String inputAccountNum, String inputCredential);
     public abstract String funcGetPaymentType();
 
     /*

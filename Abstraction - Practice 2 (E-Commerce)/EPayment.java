@@ -48,12 +48,14 @@ class EPayment extends PaymentSystem {
 
 
     @Override
-    public double funcTransaction(double dblTransactAmount)
+    public double funcTransaction(double dblTransactAmount, String strMobileNumber, String strOTPNumber)
     {
-        /*
-            Existing line of code. 
-        */
+        if(!funcIsProcessPayment(strMobileNumber, strOTPNumber)) 
+        {
+            return this.dblAmount;
+        }
 
-        return dblTransactAmount;
+        this.dblAmount -= dblTransactAmount;
+        return this.dblAmount;
     }
 }

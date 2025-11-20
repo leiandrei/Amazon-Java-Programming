@@ -45,12 +45,14 @@ class CreditCardPayment extends PaymentSystem {
     }
 
     @Override
-    public double funcTransaction(double dblTransactAmount)
+    public double funcTransaction(double dblTransactAmount, String inputCardNum, String inputCredential)
     {
-        /*
-            Existing line of code. 
-        */
-        return dblTransactAmount;
+        if(!funcIsProcessPayment(inputCardNum, inputCredential)) {
+            return this.dblAmount;
+        }
+
+        this.dblAmount -= dblTransactAmount;
+        return this.dblAmount;
     }
 
 
